@@ -10,13 +10,25 @@ function convertToRoman(num) {
     };
 
   //your code here
+	  let romanNumeral = '';
 
+  // Loop through the symbols and subtract from the number
+  for (let i = 0; i < romanSymbols.length; i++) {
+    while (num >= romanSymbols[i][1]) {
+      romanNumeral += romanSymbols[i][0];  // Add symbol to result
+      num -= romanSymbols[i][1];  // Subtract value from number
+    }
+  }
+
+  return romanNumeral;
 }
+
+
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(convertToRoman(36));
 
-
+console.log(convertToRoman(36));
 
 
 // do not edit below this line
